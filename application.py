@@ -37,6 +37,7 @@ def showLogin():
     return render_template('login.html', STATE=state)
 
 
+# the google+ connect and disconnect code is taken from the oauth assignment
 @app.route('/gconnect', methods=['POST'])
 def gconnect():
     """Google logon"""
@@ -193,6 +194,10 @@ def getUserID(email):
     except:
         return None
 
+
+# I did review https://github.com/danielburkard/udacity_fullstack_project3 repo
+# to get help with the CSS and html code, as well as a template for the CRUD
+# functions.
 
 # JSON APIs to view Catalog Information
 @app.route('/json')
