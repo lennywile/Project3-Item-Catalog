@@ -1,0 +1,19 @@
+{% include 'header.html' %}
+<div class="item">
+	<form action="#" method = 'post'>		
+		<h2>Add Item</h2>
+		<dl>
+		<dt>Name:</dt>
+		<dd><input type ='text' size='30' name='name'></dd>
+		<dt>Description:</dt>
+		<dd><textarea name="description" cols="50" rows="10"></textarea></dd>		
+		<dt>Category:</dt>
+		<dd><select name="category" size="1">
+			{% for tmpcategory in categories %}
+			<option{% if tmpcategory.name == category.name %} selected{% endif %}>{{tmpcategory.name}}</option>
+			{% endfor %}
+		</select></dd>
+		</dl>
+		<p><button class="btn" type='submit'>Create</button><p></form>
+		<p><a href="{{url_for('showCategory',category_name=category.name)}}"><button class="btn">Cancel</button></a><p>
+</div>

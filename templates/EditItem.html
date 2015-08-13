@@ -1,0 +1,33 @@
+{% include 'header.html' %}
+	<div class="item">
+		<form action="#" method='post'>			
+			<h2>Edit Item {{item.name}}</h2>
+			<dl>
+				<dt>Name:</dt>
+				<dd>
+					<input type='text' name='name' value="{{item.name}}">
+				</dd>
+				<dt>Description:</dt>
+				<dd>
+					<textarea name="description" cols="50" rows="10">{{item.description}}</textarea>
+				</dd>
+				<dt>Category:</dt>
+				<dd>
+					<select name="category" size="1">
+						{% for category in categories %}
+						<option {% if category.name==item.category.name %} selected{% endif %}>{{category.name}}</option>
+							{% endfor %}
+					</select>
+				</dd>
+				
+			</dl>
+			<p>
+				<button class="btn" type='submit'>Save</button>
+			</p>
+		</form>
+		<p>
+			<a href="{{url_for('showItem',item_id=item.id)}}">
+				<button class="btn">Cancel</button>
+			</a>
+		</p>
+	</div>

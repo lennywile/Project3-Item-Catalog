@@ -1,0 +1,53 @@
+{% include 'header.html' %}
+	<div class="main">
+		<div class="categories">
+			
+			<h2>Categories</h2>
+			<ul>				
+				{% for category in categories %}
+				<li class="one left"><a href="{{url_for('showCategory', category_name = category.name)}}">{{category.name}}</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<script type="text/javascript">
+
+            var count = items.length;
+      
+        </script>
+		{% if category %}
+		  
+		<div class="items">		
+		    {% if user %}
+			<ul>
+				<li class="one left"><a href="{{url_for('addItem',category_name=category.name)}}">Add Item</a>
+				</li>
+			{% endif %} 
+			{% if items|length is sameas 1 %}
+			<h2>{{category.name}} Items ({{items|length}} item)</h2> 
+			{% else %}
+			<h2>{{category.name}} Items ({{items|length}} items)</h2> 
+			{% endif %}
+					
+			{% for item in items %}
+				<li class="one left"><a href="{{url_for('showItem', item_id = item.id)}}">{{item.name}}</a>
+				</li>
+				{% endfor %}
+			</ul>			
+		</div>
+		{% else %}
+		<div class="items">
+			<ul>
+				{% if user %}
+				<li class="one left"><a href="{{url_for('addItem',category_name=categories[0].name)}}">Add Item</a>
+				</li>
+				{% endif %}
+				<h2>Latest Items</h2>
+				{% for item in items %}
+				<li class="one left"><a href="{{url_for('showItem', item_id = item.id)}}">{{item.name}} ({{item.category.name}})</a>
+				</li>
+				{% endfor %}
+			</ul>			
+		</div>
+		{% endif %}
+	</div>

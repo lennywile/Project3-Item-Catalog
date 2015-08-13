@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Catalog Application</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="row top-menu">
+	
+	<div class="col-lg-2 text-left">
+			{%if 'username' not in session %}
+			<a href="{{url_for('showLogin')}}"><Button class="btn">Logon</Button></a>
+			{% else %}
+			<a href="{{url_for('disconnect')}}"><Button class="btn">Logoff</Button></a>
+			<a href="{{url_for('catalogjson')}}"><Button class="btn">JSON API</Button></a>
+			{% endif %}
+		
+	</div>
+</div>
+<div id="main">
+	<h1>Catalog Application</h1>
+	 <p align="center"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcREE04uboBdMl1WnAviYr1OrGjXvJ_MPTLxIgtA3woxZJ8WgvYUVA" alt="Sporting Goods" height="200" width="542"></p> 
+</div>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+ <ul class=flashes>
+    {% for message in messages %}
+    <H3 align="center">{{ message }}</H3>
+    {% endfor %}
+    </ul>
+
+{% endif %}
+{% endwith %}

@@ -1,0 +1,159 @@
+body {
+	font-family: sans-serif;
+	background-color: #888888;
+	margin: 0px 0px 0px 0px;
+	width:100%;
+	margin:0 auto;
+	overflow:hidden;
+	float:left;
+}
+h1{
+	color: #FF0000;
+	margin-top: 10px;
+	margin-bottom: 0;
+	padding: 10px;
+	background-color: White;
+}
+
+p {
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 8px;
+	margin-top: 0px;
+}
+.header {
+	width:100%;
+	
+	margin-bottom: 10px;
+	display: flex;
+	display: -webkit-flex;
+}
+.title {
+	padding-left: 2px;	
+	width: 100%;	
+}
+
+p.username {
+	text-align:right;
+	padding-top: 10px;
+	padding-right: 2px;
+}
+.main,.item {
+	background-color: #123456;
+	clear:both;
+	color: #ADCCCC;
+	overflow: auto;
+	max-width: 800;
+	min-width: 420px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-bottom: 70px;
+	border: 2px solid;	
+	padding: 8px 8px 8px 8px;
+
+}
+.main {
+	display: -webkit-flex;
+	display: flex;
+}
+
+.categories {
+	
+	width: 40%;
+	
+}
+
+
+.items {
+	width: 60%;
+}
+		
+.flash {
+	
+	max-width: 520px;
+	min-width: 320px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	border: 2px solid;
+	border-radius: 5px;
+	color: white;
+	background-color: red;
+}
+/* links */
+a:link,a:visited,a:active {
+	color: red;
+	text-decoration: none;
+}
+
+a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+
+/* form */
+input,textarea {
+	-moz-border-radius:3px; 
+	-webkit-border-radius: 3px; 
+	-khtml-border-radius: 3px;
+	-webkit-appearance: none;
+	border-radius: 3px;
+	font-size: inherit;
+	color: black;
+	border: 1px solid black;
+
+}
+select {
+	color: black;
+
+}
+textarea { 
+	resize:vertical; 
+}
+input,select,textarea {
+	width: 100%;
+	background: #EEEEEE;
+	text-indent: 5px;
+
+}
+.btn {
+	padding: 20px;
+	margin: 0;
+	border-color: black;
+	border-width: 2px;
+	color: red;
+
+}
+.btn:hover {
+	border-color: #9FB80A;
+}
+.btn.delete {
+	border-color: #aaaaaa;
+	color: #aaaaaa;
+}
+.btn.delete:hover {
+	border-color: #aaaaaa;
+	color: red;
+}
+button {	
+	float: left;
+}
+ul {
+    margin: 1em 0;
+    padding: 0;
+    list-style-type:none;
+}
+
+
+
+li.one {
+    width: 100%;    
+}
+
+li.left {
+    float: left;
+    text-align: left;   
+}
+
