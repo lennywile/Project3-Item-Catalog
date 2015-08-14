@@ -96,7 +96,6 @@ def gconnect():
         return response
 
     # Store the access token in the session for later use.
-    login_session['credentials'] = credentials
     login_session['gplus_id'] = gplus_id
 
     # Get user info
@@ -138,6 +137,7 @@ def createUser(login_session):
                    'email'], picture=login_session['picture'])
     session.add(newUser)
     session.commit()
+    flash("Successfully created new userid: %s" % login_session['username'])
     user = session.query(User).filter_by(email=login_session['email']).one()
     return user.id
 
@@ -172,7 +172,6 @@ def disconnect():
         if login_session['provider'] == 'google':
             gdisconnect()
             del login_session['gplus_id']
-            del login_session['credentials']
         del login_session['username']
         del login_session['email']
         del login_session['picture']
